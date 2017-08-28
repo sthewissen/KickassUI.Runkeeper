@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using CarouselView.FormsPlugin.iOS;
+using FFImageLoading.Forms.Touch;
 using Foundation;
 using UIKit;
 using Xamarin.Forms;
@@ -17,6 +18,10 @@ namespace KickassUI.Runkeeper.iOS
             global::Xamarin.Forms.Forms.Init();
 
             Xamarin.FormsMaps.Init();
+
+            CachedImageRenderer.Init();
+
+            CarouselViewRenderer.Init();
 
             UITabBar.Appearance.BarTintColor = UIColor.White;
             UITabBar.Appearance.TintColor = Color.FromHex("#2dc9d7").ToUIColor();

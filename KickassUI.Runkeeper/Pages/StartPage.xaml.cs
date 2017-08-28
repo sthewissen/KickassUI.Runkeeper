@@ -18,13 +18,20 @@ namespace KickassUI.Runkeeper.Pages
         {
             base.OnAppearing();
 
-            // Set the map to your current location.
-            var locator = CrossGeolocator.Current;
-            Plugin.Geolocator.Abstractions.Position position = await locator.GetPositionAsync(TimeSpan.FromSeconds(20), null, true);
-
-            if (position != null)
+            try
             {
-                mapView.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(position.Latitude, position.Longitude), Distance.FromMiles(1)).WithZoom(16));
+                // Set the map to your current location.
+                var locator = CrossGeolocator.Current;
+                Plugin.Geolocator.Abstractions.Position position = await locator.GetPositionAsync(TimeSpan.FromSeconds(20), null, true);
+
+                if (position != null)
+                {
+                    mapView.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(position.Latitude, position.Longitude), Distance.FromMiles(1)).WithZoom(16));
+                }
+            }
+            catch
+            {
+                // No biggie if you don't allow location, only here for show purposes.
             }
         }
     }

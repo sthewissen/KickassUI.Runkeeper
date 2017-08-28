@@ -11,5 +11,12 @@ namespace KickassUI.Runkeeper.Pages
         {
             InitializeComponent();
         }
+
+        void Handle_BadgeTapped(object sender, System.EventArgs e)
+        {
+            var item = sender as StackLayout;
+
+            item.BackgroundColor = Color.FromHex("#1a767e");
+        }
     }
 }
