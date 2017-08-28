@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using KickassUI.Runkeeper.Controls;
 using Plugin.Geolocator;
 using Xamarin.Forms;
@@ -18,15 +19,27 @@ namespace KickassUI.Runkeeper.Pages
         {
             base.OnAppearing();
 
+            // On Droid this wraps behind the other views.
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                Grid.SetRowSpan(mapView, 3);
+
+                if (ToolbarItems.Count > 1)
+                {
+                    var firstItem = ToolbarItems.FirstOrDefault();
+                    ToolbarItems.Remove(firstItem);
+                }
+            }
+
             try
             {
                 // Set the map to your current location.
                 var locator = CrossGeolocator.Current;
-                Plugin.Geolocator.Abstractions.Position position = await locator.GetPositionAsync(TimeSpan.FromSeconds(20), null, true);
+                Plugin.Geolocator.Abstractions.Position position = await locator.GetPositionAsync(TimeSpan.FromSeconds(5), null, true);
 
                 if (position != null)
                 {
-                    mapView.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(position.Latitude, position.Longitude), Distance.FromMiles(1)).WithZoom(16));
+                    mapView.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(position.Latitude, position.Longitude), Distance.FromMiles(10)).WithZoom(16));
                 }
             }
             catch
