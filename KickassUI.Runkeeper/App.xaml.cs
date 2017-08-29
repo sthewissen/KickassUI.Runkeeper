@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using FreshMvvm;
+using KickassUI.Runkeeper.Helpers;
 using KickassUI.Runkeeper.PageModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -30,12 +31,12 @@ namespace KickassUI.Runkeeper
             }
             else
             {
-                var navContainer = new FreshMasterDetailNavigationContainer();
+                var navContainer = new CustomNavigation();
 
                 navContainer.Init("Menu", "hamburger.png");
                 navContainer.AddPage<StartPageModel>("Start");
                 navContainer.AddPage<MePageModel>("Me");
-                navContainer.AddPage<MePageModel>("Me Cloned");
+                navContainer.AddPage<MeClonePageModel>("MeClone");
 
                 MainPage = navContainer;
             }

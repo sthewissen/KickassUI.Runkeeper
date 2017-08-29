@@ -8,6 +8,7 @@
     android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     android:elevation="5dp">
     <ImageView
+        android:id="@+id/logoImageLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"

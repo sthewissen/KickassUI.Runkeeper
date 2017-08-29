@@ -4,10 +4,10 @@ using KickassUI.Runkeeper.Droid.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(StartButton), typeof(StartButtonRenderer))]
+[assembly: ExportRenderer(typeof(Button), typeof(MarginlessButtonRenderer))]
 namespace KickassUI.Runkeeper.Droid.Renderers
 {
-    public class StartButtonRenderer : ButtonRenderer
+    public class MarginlessButtonRenderer : ButtonRenderer
     {
         protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
         {

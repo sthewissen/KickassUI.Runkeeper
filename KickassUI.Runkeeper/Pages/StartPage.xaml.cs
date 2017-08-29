@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FormsToolkit;
 using KickassUI.Runkeeper.Controls;
+using KickassUI.Runkeeper.Helpers;
 using Plugin.Geolocator;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
@@ -18,6 +20,9 @@ namespace KickassUI.Runkeeper.Pages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+            // Show the logo
+            MessagingService.Current.SendMessage(MessageKeys.ChangeToolbar, true);
 
             // On Droid this wraps behind the other views.
             if (Device.RuntimePlatform == Device.Android)
@@ -46,6 +51,14 @@ namespace KickassUI.Runkeeper.Pages
             {
                 // No biggie if you don't allow location, only here for show purposes.
             }
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            // Remove the logo
+            MessagingService.Current.SendMessage(MessageKeys.ChangeToolbar, false);
         }
     }
 }

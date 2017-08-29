@@ -44,44 +44,38 @@
             </StackLayout>
 
             <!-- 4 buttons to setup your activity -->
-            <ContentView BackgroundColor="Transparent" Grid.Row="1">
-                <ContentView.Margin>
-                    <OnPlatform x:TypeArguments="Thickness">
-                        <On Platform="iOS" Value="0" />
-                        <On Platform="Android" Value="5,0,5,0" />
+
+            <!-- The iOS version uses a custom button and renderer -->
+            <Grid Grid.Row="1" ColumnSpacing="1" RowSpacing="1" BackgroundColor="#e0e0e0"> 
+                <Grid.IsVisible>
+                    <OnPlatform x:TypeArguments="x:Boolean">
+                        <On Platform="iOS" Value="true" />
+                        <On Platform="Android" Value="false" />
                     </OnPlatform>
-                </ContentView.Margin>
-
-                <!-- The iOS version uses a custom button and renderer -->
-                <Grid ColumnSpacing="0" RowSpacing="0" BackgroundColor="#e0e0e0"> 
-                    <ContentView.IsVisible>
-                        <OnPlatform x:TypeArguments="x:Boolean">
-                            <On Platform="iOS" Value="true" />
-                            <On Platform="Android" Value="false" />
-                        </OnPlatform>
-                    </ContentView.IsVisible>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <controls:StartButton Grid.Row="0" Grid.Column="0" HeightRequest="55" BackgroundColor="White" TextColor="#555555" FontSize="18" LabelFontSize="13" BorderRadius="0" Image="icon_shoe.png" Label="Activity" LabelColor="#999999" Text="Running" />
-                    <controls:StartButton Grid.Row="0" Grid.Column="1" HeightRequest="55" BackgroundColor="White" TextColor="#555555" FontSize="18" LabelFontSize="13" BorderRadius="0" Image="icon_clipboard.png" Label="Workout" LabelColor="#999999" Text="None" />
-                    <controls:StartButton Grid.Row="1" Grid.Column="0" HeightRequest="55" BackgroundColor="White" TextColor="#555555" FontSize="18" LabelFontSize="13" BorderRadius="0" Image="icon_headphones.png" Label="Music" LabelColor="#999999" Text="None" />
-                    <controls:StartButton Grid.Row="1" Grid.Column="1" HeightRequest="55" BackgroundColor="White" TextColor="#555555" FontSize="18" LabelFontSize="13" BorderRadius="0" Image="icon_speaker.png" Label="Audio Stats" LabelColor="#999999" Text="5 min" />
-               </Grid> 
-
-                <!-- The Android version doesn't use buttons. Just to show you can also do this another way. -->
-               <Grid ColumnSpacing="1" RowSpacing="1" Margin="5" BackgroundColor="#e0e0e0"> 
-                    <ContentView.IsVisible>
-                        <OnPlatform x:TypeArguments="x:Boolean">
-                            <On Platform="iOS" Value="false" />
-                            <On Platform="Android" Value="true" />
-                        </OnPlatform>
-                    </ContentView.IsVisible>
+                </Grid.IsVisible>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <controls:StartButton Grid.Row="0" Grid.Column="0" HeightRequest="55" BackgroundColor="White" TextColor="#555555" FontSize="18" LabelFontSize="13" BorderRadius="0" Image="icon_shoe.png" Label="Activity" LabelColor="#999999" Text="Running" />
+                <controls:StartButton Grid.Row="0" Grid.Column="1" HeightRequest="55" BackgroundColor="White" TextColor="#555555" FontSize="18" LabelFontSize="13" BorderRadius="0" Image="icon_clipboard.png" Label="Workout" LabelColor="#999999" Text="None" />
+                <controls:StartButton Grid.Row="1" Grid.Column="0" HeightRequest="55" BackgroundColor="White" TextColor="#555555" FontSize="18" LabelFontSize="13" BorderRadius="0" Image="icon_headphones.png" Label="Music" LabelColor="#999999" Text="None" />
+                <controls:StartButton Grid.Row="1" Grid.Column="1" HeightRequest="55" BackgroundColor="White" TextColor="#555555" FontSize="18" LabelFontSize="13" BorderRadius="0" Image="icon_speaker.png" Label="Audio Stats" LabelColor="#999999" Text="5 min" />
+           </Grid> 
+            
+           <!-- The Android version doesn't use buttons. Just to show you can also do this another way. -->
+           <ContentView BackgroundColor="Transparent" Grid.Row="1" Margin="5,0,5,0">
+               <ContentView.IsVisible>
+                    <OnPlatform x:TypeArguments="x:Boolean">
+                        <On Platform="iOS" Value="false" />
+                        <On Platform="Android" Value="true" />
+                    </OnPlatform>
+                </ContentView.IsVisible>
+                <Grid ColumnSpacing="1" RowSpacing="1" Margin="5" BackgroundColor="#e0e0e0"> 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -118,7 +112,7 @@
                             <Label Text="Time" TextColor="#555555" FontSize="16" />
                         </StackLayout>
                     </StackLayout>
-               </Grid> 
+                </Grid>
             </ContentView>
 
             <!-- Start button -->

@@ -165,6 +165,15 @@
     <Reference Include="Xamarin.Forms.Maps">
       <HintPath>..\packages\Xamarin.Forms.Maps.2.3.4.267\lib\MonoAndroid10\Xamarin.Forms.Maps.dll</HintPath>
     </Reference>
+    <Reference Include="FormsToolkit.Android">
+      <HintPath>..\packages\FormsToolkit.1.1.18\lib\MonoAndroid10\FormsToolkit.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsToolkit">
+      <HintPath>..\packages\FormsToolkit.1.1.18\lib\MonoAndroid10\FormsToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Corcav.Behaviors">
+      <HintPath>..\packages\Corcav.Behaviors.2.3.7\lib\dotnet\Corcav.Behaviors.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KickassUI.Runkeeper\KickassUI.Runkeeper.csproj">
@@ -179,7 +188,7 @@
     <Compile Include="MainApplication.cs" />
     <Compile Include="Renderers\CustomMapRenderer.cs" />
     <Compile Include="Renderers\StartPageRenderer.cs" />
-    <Compile Include="Renderers\StartButtonRenderer.cs" />
+    <Compile Include="Renderers\MarginlessButtonRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -208,6 +217,12 @@
     <AndroidResource Include="Resources\drawable-hdpi\me_photo.jpg" />
     <AndroidResource Include="Resources\layout\ToolbarWithLogo.axml" />
     <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_comments.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_settings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_usersettings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\graph.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\me.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\start.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

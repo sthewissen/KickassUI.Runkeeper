@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace KickassUI.Runkeeper.Pages
 {
-    public partial class MePage : ContentPage
+    public partial class MeClonePage : ContentPage
     {
-        public MePage()
+        public MeClonePage()
         {
             InitializeComponent();
         }
