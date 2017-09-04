@@ -14,7 +14,7 @@ A Xamarin.Forms version of the Runkeeper app to prove you can create goodlooking
 ## The end result
 On the left hand side we have the actual app, on the right hand side the Xamarin Forms version:
 
-<img src="https://github.com/sthewissen/KickassUI.Runkeeper/blob/master/images/comparison-ios-1-1.png" width="600" />
-<img src="https://github.com/sthewissen/KickassUI.Runkeeper/blob/master/images/comparison-ios-2.png" width="600" />
-<img src="https://github.com/sthewissen/KickassUI.Runkeeper/blob/master/images/comparison-droid-1.png" width="600" />
-<img src="https://github.com/sthewissen/KickassUI.Runkeeper/blob/master/images/comparison-droid-2.png" width="600" />
+<img src="https://github.com/sthewissen/KickassUI.Runkeeper/blob/master/images/comparison-ios-1-1.jpg" width="600" />
+<img src="https://github.com/sthewissen/KickassUI.Runkeeper/blob/master/images/comparison-ios-2.jpg" width="600" />
+<img src="https://github.com/sthewissen/KickassUI.Runkeeper/blob/master/images/comparison-droid-1.jpg" width="600" />
+<img src="https://github.com/sthewissen/KickassUI.Runkeeper/blob/master/images/comparison-droid-2.jpg" width="600" />
